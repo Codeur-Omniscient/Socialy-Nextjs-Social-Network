@@ -1,19 +1,16 @@
-import {
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  UserButton,
-} from "@clerk/nextjs";
+import ModeToggle from "@/components/ModeToggle";
+import { Button } from "@/components/ui/button";
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
     <div>
       <SignedOut>
-        <SignInButton />
-        <SignUpButton />
+        <SignInButton mode="modal">
+          <Button>Sign in</Button>
+        </SignInButton>
       </SignedOut>
-
+      <ModeToggle />
       <SignedIn>
         <UserButton />
       </SignedIn>
